@@ -1,18 +1,18 @@
 // Here we export some useful types and functions for interacting with the Anchor program.
 import { AnchorProvider, Program } from '@coral-xyz/anchor'
 import { Cluster, PublicKey } from '@solana/web3.js'
-import BlinksvotingprogIDL from '../target/idl/blinksvotingprog.json'
-import type { Blinksvotingprog } from '../target/types/blinksvotingprog'
+import BlinksvotingprogIDL from '../target/idl/voting_program.json'
+import type { VotingProgram } from "../target/types/voting_program"
 
 // Re-export the generated IDL and type
-export { Blinksvotingprog, BlinksvotingprogIDL }
+export { VotingProgram, BlinksvotingprogIDL }
 
 // The programId is imported from the program IDL.
 export const BLINKSVOTINGPROG_PROGRAM_ID = new PublicKey(BlinksvotingprogIDL.address)
 
 // This is a helper function to get the Blinksvotingprog Anchor program.
 export function getBlinksvotingprogProgram(provider: AnchorProvider, address?: PublicKey) {
-  return new Program({ ...BlinksvotingprogIDL, address: address ? address.toBase58() : BlinksvotingprogIDL.address } as Blinksvotingprog, provider)
+  return new Program({ ...BlinksvotingprogIDL, address: address ? address.toBase58() : BlinksvotingprogIDL.address } as VotingProgram, provider)
 }
 
 // This is a helper function to get the program ID for the Blinksvotingprog program depending on the cluster.
