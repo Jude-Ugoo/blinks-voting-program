@@ -39,14 +39,14 @@ describe("Voting", () => {
     );
 
     const ugooTx = await program.methods
-      .initializeCandidate(new anchor.BN(1), "crunchy")
+      .initializeCandidate(new anchor.BN(1), "L.Messi")
       .accounts({
         pollAccount: pollAddress,
       })
       .rpc();
 
     const valTx = await program.methods
-      .initializeCandidate(new anchor.BN(1), "smooth")
+      .initializeCandidate(new anchor.BN(1), "C.Ronaldo")
       .accounts({
         pollAccount: pollAddress,
       })
@@ -57,7 +57,7 @@ describe("Voting", () => {
   });
 
   it("vote", async () => {
-    const tx = await program.methods.vote(new anchor.BN(1), "smooth").rpc();
+    const tx = await program.methods.vote(new anchor.BN(1), "L.Messi").rpc();
 
     console.log("Vote transaction signature", tx);
   });

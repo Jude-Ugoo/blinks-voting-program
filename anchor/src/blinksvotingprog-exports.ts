@@ -21,7 +21,7 @@ export function getBlinksvotingprogProgramId(cluster: Cluster) {
     case 'devnet':
     case 'testnet':
       // This is the program ID for the Blinksvotingprog program on devnet and testnet.
-      return new PublicKey('coUnmi3oBUtwtd9fjeAvSsJssXh5A5xyPbhpewyzRVF')
+      return new PublicKey('4G3fBuf4xkP1KcwCCeQAVDVjwTA1uq3CbDLWykEim6rn')
     case 'mainnet-beta':
     default:
       return BLINKSVOTINGPROG_PROGRAM_ID
